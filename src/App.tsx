@@ -1,9 +1,16 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Watchlist from "./pages/Watchlist";
 
 const App: React.FC = () => {
-  return <Watchlist />;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Watchlist />} />   {/* default */}
+        <Route path="/watchlist" element={<Watchlist />} />
+      </Routes>
+    </BrowserRouter>
+  );
 };
 
 export default App;
